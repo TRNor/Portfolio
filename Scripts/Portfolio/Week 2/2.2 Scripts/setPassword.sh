@@ -7,3 +7,6 @@ mkdir "$folderName"
 read -sp 'Please enter your password: ' password
 # Step 4: Write the password input by the user to a file named secret.txt.
 echo "$password" > secret.txt
+#Step 5: Move secret.txt file into the user defined folder.
+mv secret.txt $folderName
+exit 0
