@@ -16,7 +16,8 @@ echo "You entered the password: $passwordEntered"
 
 #Hash and send that input to the variable 'passHashEntered'
 
-echo $passwordEntered | sha256sum > read passHashEntered
+#echo "$passwordEntered" | sha256sum > passHashEntered
+passHashEntered=$(echo "$passwordEntered" | sha256sum)
 
 echo "Hash of your entered password is: $passHashEntered"
 
