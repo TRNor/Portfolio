@@ -1,18 +1,14 @@
 #!/bin/bash
 
 #Ask the user to type a secret password (hide the input)
-	#TESTED WORKS
-read -sp 'Please enter your password: ' password
-
-#Hash entered password for later comparison
-
-echo "$password" | sha256sum > passwordHash
+	#Promt user to enter password, hash and send input password to variable ;
+read -sp 'Please enter your password: ' | sha256sum > passwordEntered
 
 #Check the users password against the hash stored in 'secret.txt'
 
 	#Pull password hash from secret.txt to variable 'hashCheck'
 
-cat secret.txt | hashCheck
+echo secret.txt | $hashCheck
 
 if [[ "$passwordHash" -eq "$hashCheck" ]]; then
 
