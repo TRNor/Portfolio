@@ -1,16 +1,31 @@
 #!/bin/bash
 
+#Assign stored password hash to variable 'passHashStored'
+passHashStored=$(cat secret.txt)
+
+echo "Hash of stored password is: $passHashStored"
+
 #Ask the user to type a secret password (hide the input)
-	#Promt user to enter password, hash and send input password to variable ;
-read -sp 'Please enter your password: ' | sha256sum > passwordEntered
+#Prompt the user to enter a password and assign this entry to the variable 'passwordEntered'
 
-#Check the users password against the hash stored in 'secret.txt'
+read -sp 'Please enter your password: ' passwordEntered
 
-	#Pull password hash from secret.txt to variable 'hashCheck'
+echo 
 
-echo secret.txt | $hashCheck
+echo "You entered the password: $passwordEntered"
 
-if [[ "$passwordHash" -eq "$hashCheck" ]]; then
+#Hash and send that input to the variable 'passHashEntered'
+
+echo $passwordEntered | sha256sum > read passHashEntered
+
+echo "Hash of your entered password is: $passHashEntered"
+
+#Check the user's password against the hash stored in 'secret.txt'
+	#Pull password hash from secret.txt to variable 'passwordStored'
+
+
+
+if [[ "$passHashEntered" == "$passHashStored" ]]; then
 
 #If the user's password is correct, print "Access Granted" and quit with the exit code 0
 
