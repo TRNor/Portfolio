@@ -17,15 +17,23 @@ fi
 read userSelection
 
 #Run appropriate script based on users selection
+case $userSelection in
 
-if [[ $userSelection -eq 1 ]]; then
+  1)
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.1 Scripts/foldermaker.sh" )
-elif [[ $userSelection -eq 2 ]]; then
+    ;;
+
+  2)
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.3 Scripts/foldercopier.sh" )
-elif [[ $userSelection -eq 3 ]];then
+    ;;
+
+  3)
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.5 Scripts/resetPassword.sh" )
-else
-    echo "You entered an invalid option."
-fi
+    ;;
+
+  *)
+    echo -n "unknown"
+    ;;
+esac
 
 exit 0
