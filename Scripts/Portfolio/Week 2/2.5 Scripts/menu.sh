@@ -16,7 +16,7 @@ fi
 
 read userSelection
 
-#Run appropriate script based on users selection
+#Run appropriate script based on users selection using a case statement
 case $userSelection in
 
   1)
