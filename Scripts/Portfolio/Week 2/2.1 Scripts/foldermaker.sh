@@ -18,4 +18,4 @@ exit 0
 
 # ------------------------------------------------------------------------------------------
 # References
-# MCKNIGHT, R. (2022, January 17). foldercopier.sh. Blackboard.Ecu.Edu.Au. https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274246_1&mode=view
+# MCKNIGHT, R. (2022, January 17). foldermaker.sh. Blackboard.Ecu.Edu.Au. https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274246_1&mode=view
