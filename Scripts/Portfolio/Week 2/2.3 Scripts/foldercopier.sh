@@ -5,9 +5,8 @@
 # ------------------------------------------------------------------------------------------
 
 # Purpose: Prompt user to enter the name of the folder they would like to copy.
-echo "Type the name of the folder you would like to copy: "
 
-readlink -f folderName
+read -p "Type the name of the folder you would like to copy: " folderName
 
 # Purpose: Check if the name entered by user is a valid directory.
 
