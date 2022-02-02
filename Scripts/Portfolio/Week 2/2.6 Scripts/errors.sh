@@ -25,12 +25,6 @@ fi
   
 case $correct in 
       
-*) 
-      
-    echo "Go Away!" #people who get it wrong need to be told to go away! 
-      
-    ;; 
-      
 true) 
       
     echo "you have unlocked the secret menu!" 
@@ -39,5 +33,11 @@ true)
       
     ;; 
       
+*) 
+      
+    echo "Go Away!" #people who get it wrong need to be told to go away! 
+      
+    ;; 
+
 esac 
      
