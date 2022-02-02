@@ -20,14 +20,15 @@ bold="\e[1m"
 uline="\e[4m"
 reset="\e[0m"
 
+activeNum=0
 
 # Purpose: Print Menu to screen and prompt user to select arithmetic operand.
 
 echo -e "${uline}${bold} Bash Calculator ${reset}"
-echo -e "1. ${blue}Addition (+)${reset}"
-echo -e "2. ${green}Subtraction (-)${reset}"
-echo -e "3. ${yellow}Multiplication (x)${reset}"
-echo -e "4. ${purple}Division (/)${reset}"
+echo -e "${blue}1. Addition (+)${reset}"
+echo -e "${green}2. Subtraction (-)${reset}"
+echo -e "${yellow}3. Multiplication (x)${reset}"
+echo -e "${purple}4. Division (/)${reset}"
 echo ""
 
 # Purpose: Prompt user to select an arithmetic operand printed above and assign to variable "operandSelection".
@@ -48,16 +49,28 @@ else
     echo "${red}Error! You have made an invalid entry${reset}"
 fi
 
-# Purpose:  If statement 
+# Purpose:  If statement to run appropriate mathematica calculation based on user's input.
 
 if [ "$operandVar" = "add" ]; then
-    echo "Please enter the first number you wish to $operandVar to"
+    # Purpose: Prompt user for input of two numbers, then calculate the addition of the two numbers and assign the result to a variable "activeNum" and print the result.
+    read -p "Please enter the two numbers you wish to $operandVar: " firstNum secondNum
+    activeNum=$(expr "$firstNum" + "$secondNum")
+    echo "Result: $activeNum"
 elif [ "$operandVar" = "subtract" ]; then
-    echo " Please enter the first number you wish to $operandVar from"
+    # Purpose: Prompt user for input of two numbers, then calculate the addition of the two numbers and assign the result to a variable "activeNum" and print the result.
+    read -p "Please enter the number you wish to $operandVar from followed by the number you wish to $operandVar by: " firstNum secondNum
+    activeNum=$(expr "$firstNum" - "$secondNum")
+    echo "Result: $activeNum"
 elif [ "$operandVar" = "multiply" ]; then
-    echo " Please enter the first number you wish to $operandVar with"
+    # Purpose: Prompt user for input of two numbers, then calculate the addition of the two numbers and assign the result to a variable "activeNum" and print the result.
+    read -p "Please enter the number you wish to $operandVar with followed by the number you wish to $operandVar by: " firstNum secondNum
+    activeNum=$(expr "$firstNum" \* "$secondNum")
+    echo "Result: $activeNum"
 elif [ "$operandVar" = "divide" ]; then
-    echo " Please enter the first number you wish to $operandVar from"
+    # Purpose: Prompt user for input of two numbers, then calculate the addition of the two numbers and assign the result to a variable "activeNum" and print the result.
+    read -p "Please enter the number you wish to $operandVar followed by the number you wish to $operandVar by: " firstNum secondNum
+    activeNum=$(expr "$firstNum" / "$secondNum")
+    echo "Result: $firstNum ${purple}/${reset} $secondNum = $activeNum"
 else
     echo "${red}Error! Something went wrong with the operandVar if statement${reset}"
 fi
