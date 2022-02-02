@@ -30,7 +30,9 @@ true)
     echo "you have unlocked the secret menu!" 
       
     #TODO: add a secret menu for people in the know. 
-      
+    
+    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/menu.sh" )
+
     ;; 
       
 *) 
