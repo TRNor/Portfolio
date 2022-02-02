@@ -9,7 +9,7 @@
 
 # Purpose: Run passwordCheck script
 
-( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.4 Scripts/passwordCheck.sh" )
+( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/passwordCheck.sh" )
 
 # Purpose: Check exit code of passwordCheck script. If paccess is granted ($? = 0) then print menu options to screen. else print password was incorrect.
 
@@ -31,15 +31,15 @@ read userSelection
 case $userSelection in
 
   1)
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.1 Scripts/foldermaker.sh" )
+    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldermaker.sh" )
     ;;
 
   2)
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.3 Scripts/foldercopier.sh" )
+    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldercopier.sh" )
     ;;
 
   3)
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/2.5 Scripts/resetPassword.sh" )
+    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/resetPassword.sh" )
     ;;
 
   *)
