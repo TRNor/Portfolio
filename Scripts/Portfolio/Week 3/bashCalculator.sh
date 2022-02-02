@@ -36,13 +36,13 @@ read -p 'Please select which arithmetic operand you wish to use: ' operandSelect
 
 # Purpose: Assign users choice to a variable (with various acceptable user inputs to indicate operand choice).
 
-if [ operandSelection = "1" ] || [ operandSelection = "add" ] || [ operandSelection = "Add" ] || [ operandSelection = "addition" ] || [ operandSelection = "Addition" ] || [ operandSelection = "+" ]; then
+if [ "$operandSelection" = "1" ] || [ "$operandSelection" = "add" ] || [ "$operandSelection" = "Add" ] || [ "$operandSelection" = "addition" ] || [ "$operandSelection" = "Addition" ] || [ "$operandSelection" = "+" ]; then
     operandVar="add"
-elif [ operandSelection = "2" ] || [ operandSelection = "subtract" ] || [ operandSelection = "Subtract" ] || [ operandSelection = "subtraction" ] || [ operandSelection = "Subtraction" ] || [ operandSelection = "-" ]; then
+elif [ "$operandSelection" = "2" ] || [ "$operandSelection" = "subtract" ] || [ "$operandSelection" = "Subtract" ] || [ "$operandSelection" = "subtraction" ] || [ "$operandSelection" = "Subtraction" ] || [ "$operandSelection" = "-" ]; then
     operandVar="subtract"
-elif [ operandSelection = "3" ] || [ operandSelection = "multiply" ] || [ operandSelection = "Multiply" ] || [ operandSelection = "multiplication" ] || [ operandSelection = "Multiplication" ] || [ operandSelection = "x" ]; then
+elif [ "$operandSelection" = "3" ] || [ "$operandSelection" = "multiply" ] || [ "$operandSelection" = "Multiply" ] || [ "$operandSelection" = "multiplication" ] || [ "$operandSelection" = "Multiplication" ] || [ "$operandSelection" = "x" ]; then
     operandVar="multiply"
-elif [ operandSelection = "4" ] || [ operandSelection = "divide" ] || [ operandSelection = "Divide" ] || [ operandSelection = "division" ] || [ operandSelection = "Division" ] || [ operandSelection = "/" ]; then
+elif [ "$operandSelection" = "4" ] || [ "$operandSelection" = "divide" ] || [ "$operandSelection" = "Divide" ] || [ "$operandSelection" = "division" ] || [ "$operandSelection" = "Division" ] || [ "$operandSelection" = "/" ]; then
     operandVar="divide"
 else
     echo "${red}Error! You have made an invalid entry${reset}"
@@ -50,13 +50,13 @@ fi
 
 # Purpose:  If statement 
 
-if [ operandVar = "add" ]; then
+if [ "$operandVar" = "add" ]; then
     echo "Please enter the first number you wish to $operandVar to"
-elif [ operandVar = "subtract" ]; then
+elif [ "$operandVar" = "subtract" ]; then
     echo " Please enter the first number you wish to $operandVar from"
-elif [ operandVar = "multiply" ]; then
+elif [ "$operandVar" = "multiply" ]; then
     echo " Please enter the first number you wish to $operandVar with"
-elif [ operandVar = "divide" ]; then
+elif [ "$operandVar" = "divide" ]; then
     echo " Please enter the first number you wish to $operandVar from"
 else
     echo "${red}Error! Something went wrong with the operandVar if statement${reset}"
