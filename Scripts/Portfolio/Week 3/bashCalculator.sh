@@ -64,8 +64,8 @@ if [ $firstNum != "Q" ] && [ $firstNum != "C" ]; then
     ansNum=$(expr "$firstNum" - "$secondNum")
     echo -e " = $ansNum"
     ;;
-    "x")
-    ansNum=$(expr "$firstNum" x "$secondNum")
+    x)
+    ansNum=$(expr "$firstNum" \* "$secondNum")
     echo -e " = $ansNum"
     ;;
     /)
