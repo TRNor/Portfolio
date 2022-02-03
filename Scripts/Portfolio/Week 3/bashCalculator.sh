@@ -22,7 +22,7 @@ bold="\e[1m"
 uline="\e[4m"
 reset="\e[0m"
 
-workingNum=0
+ansNum=0
 EXIT=0
 
 
@@ -45,8 +45,6 @@ echo -e "${yellow}(C) Clear${reset}"
 echo -e "${bold}(Q) QUIT ${reset}"
 echo ""
 
-
-
 # Purpose: While loop - run script until user decides to quit.
 
 while [ "$EXIT" -eq 0 ]
@@ -55,27 +53,24 @@ do
 # Purpose: Prompt user to type mathematical expression using two numbers and either the +, -, x or / operand.
 
 read -p '' firstNum operandVarSymbol secondNum
-echo "firstNum check: $firstNum"
-echo "operandVarSymbol check: $operandVarSymbol"
-echo "secondNum check: $secondNum"
 
-if [ $firstNum != "Q" ]; then
+if [ $firstNum != "Q" ] && [ $firstNum != "C" ]; then
     case $operandVarSymbol in
     +)
-    workingNum=$(expr "$firstNum" + "$secondNum")
-    echo -e " = $workingNum"
+    ansNum=$(expr "$firstNum" + "$secondNum")
+    echo -e " = $ansNum"
     ;;
     -)
-    workingNum=$(expr "$firstNum" - "$secondNum")
-    echo -e " = $workingNum"
+    ansNum=$(expr "$firstNum" - "$secondNum")
+    echo -e " = $ansNum"
     ;;
-    x)
-    workingNum=$(expr "$firstNum" x "$secondNum")
-    echo -e " = $workingNum"
+    "x")
+    ansNum=$(expr "$firstNum" x "$secondNum")
+    echo -e " = $ansNum"
     ;;
     /)
-    workingNum=$(expr "$firstNum" / "$secondNum")
-    echo -e " = $workingNum"
+    ansNum=$(expr "$firstNum" / "$secondNum")
+    echo -e " = $ansNum"
     ;;
     #Default Case
     *)
@@ -107,7 +102,6 @@ else
     echo ""
     echo -e "${red}${bold}ERROR: UNKNOWN ERROR!${reset}"
 fi
-
 
 done
 
