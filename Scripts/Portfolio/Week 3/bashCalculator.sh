@@ -8,16 +8,9 @@
 
 red="\e[0;91m"
 blue="\e[0;94m"
-expand_bg="\e[K"
-blue_bg="\e[0;104m${expand_bg}"
-red_bg="\e[0;101m${expand_bg}"
-green_bg="\e[0;102m${expand_bg}"
-white_bg="\e[0;47m${expand_bg}"
 green="\e[0;92m"
 yellow="\e[0;33m"
-black="\e[0;30m"
 purple="\e[0;35m"
-white="\e[0;97m"
 bold="\e[1m"
 uline="\e[4m"
 reset="\e[0m"
@@ -52,7 +45,7 @@ do
 
 read -p '' firstNum operandVarSymbol secondNum
 
-if [ $firstNum != "Q" ] && [ $firstNum != "C" ]; then
+if [ "$firstNum" != "Q" ] && [ "$firstNum" != "C" ]; then
     case $operandVarSymbol in
     +)
     ansNum=$(expr "$firstNum" + "$secondNum")
@@ -92,7 +85,7 @@ elif [ $firstNum = "C" ]; then
     echo ""
     firstNum=0
     secondNum=0
-    operandVarSymbol=?
+    operandVarSymbol="?"
 elif [ $firstNum = "Q" ]; then
     echo "Program quit successfully"
     EXIT=1
