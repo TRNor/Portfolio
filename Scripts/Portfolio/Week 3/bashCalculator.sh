@@ -33,8 +33,6 @@ clear
 echo -e "${uline}${bold} Bash Calculator ${reset}"
 echo ""
 echo "Please enter your first number, followed by your operand of choice and then your second number. For example 10 - 3"
-#add this functionality
-#echo "If you have already performed a calculation, you can use the previous ans as either the first or second number by typing ans"
 echo "Alternatively type C and enter to clear the working space or Q and enter to quit the program"
 echo ""
 echo -e "${blue}(+) Addition${reset}"
