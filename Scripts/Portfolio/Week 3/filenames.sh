@@ -10,7 +10,7 @@ lineCount=$(wc -l < filenames.txt)
 
 # Purpose: Write each line of the filenames.txt file to an array using the mapfile function (Ref 4 and 5).
 
-mapfile -t lineArray < <(cut -d' ' -f1 < filenames.txt)
+mapfile -t lineArray < filenames.txt
 
 # Purpose: For each line (array element) compare to various conditions using if/else statement and print results.
 
@@ -18,29 +18,26 @@ for ((i = 0; i <= $lineCount; i++))
 do
 
 # Purpose: If the elements of the array (lines of text) contain ".sh" print "That file exists" (Ref 6).
- 
-if [[ "${lineArray[$i]}" == *".sh" ]]; then
-    echo "${lineArray[$i]} - That file exists"
+# 
+if [[ ${lineArray[$i]} == *".sh"* ]]; then
+    echo "${lineArray[$i]}- That file exists"
 
 # Purpose: Else if the elements of the array (lines of text) are a valid directory, print "That's a directory" (Ref 7)
 
 elif [ -d "${lineArray[$i]}" ]; then
-    echo "${lineArray[$i]} - That's a directory"
+    echo "${lineArray[$i]}- That's a directory"
 
-# Purpose: Else if the element is a null (aka no text on that line), don't print anything. (Ref 8)
+# Purpose: Else if the element is a null (aka no text on that line), don't do anything. (Ref 8)
 
-elif [ -z "${lineArray[$i]}" ]; then
+elif [[ -z "${lineArray[$i]}" ]]; then
     :
 
 else
-    echo "I don't know what that is."
+    echo "${lineArray[$i]}- I don't know what that is."
 fi
 
 
 done
-
-
-
 
 exit 0
 
@@ -54,4 +51,3 @@ exit 0
 # 6. BELLAIRE, A. 23 October 2008. how to check if a string contains a substring. stackoverflow. https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash
 # 7. vgersh99. 14 November 2011. bash shell check if value valid directory. www.unix.com. https://www.unix.com/homework-and-coursework-questions/171225-bash-shell-check-if-value-valid-directory.html
 # 8. GITE, V. 1 June 2021. bash shell find out if a variable has null value or not. www.cyberciti.biz. https://www.cyberciti.biz/faq/bash-shell-find-out-if-a-variable-has-null-value-or-not/
-
