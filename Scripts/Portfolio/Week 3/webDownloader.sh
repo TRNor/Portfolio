@@ -4,21 +4,61 @@
 # Date Modified: 4 February 2022
 # ------------------------------------------------------------------------------------------
 
+# Purpose: Define Global Variables
+
+bold="\e[1m"
+uline="\e[4m"
+reset="\e[0m"
+
+EXIT=0
+
+# Purpose: Print Menu to screen and prompt user to select an option to either download a file, clear the screen to main menu or quit.
 
 
 
-# Purpose: Prompt the user to enter the URL of the file they wish to download.
+# Purpose: While loop - run script until user decides to quit.
 
-read -p 'Please enter the URL you wish to download: ' URL
+while [ "$EXIT" -eq 0 ]
+do
 
-# Purpose: Prompt the user to enter the directory for where they wish to download the file to.
+# Purpose: Heading
 
-read -p 'Please enter the destination directory you wish to download to: ' directory
+echo -e "${uline}${bold} Web Downloader ${reset}"
+echo ""
 
-# Purpose: use wget command to download contents of URL input by the user to the directory input by the user (Ref 2)
+# Purpose: Prompt user to enter a URL to download from or type Q to quit.
 
-wget -P "$directory" "$URL"
+read -p 'Please enter the URL you wish to download or type Q to quit: ' URLorQUIT
 
+# Purpose: If the user enters Q, the program will quit, otherwise it will prompt the user to input a target directory assuming the user has input a valid URL to download from.
+
+if [ "$URLorQUIT" != "Q" ]; then
+    read -p 'Please enter the destination directory you wish to download to: ' directory
+
+    # Purpose: use wget command to download contents of URL input by the user to the directory input by the user (Ref 2)
+
+    wget -P "$directory" "$URLorQUIT"
+
+    echo "File downloaded successfully!"
+
+elif [ "$URLorQUIT" = "Q" ]; then
+
+    # Purpose: User feedback that the program has quit.
+
+    echo "Program quit successfully"
+    EXIT=1
+
+else   
+    
+    # Purpose: If the user enters an invalid input the program will print an error.
+
+    echo ""
+    echo -e "${red}${bold}ERROR: INVALID USER INPUT!${reset}"
+fi
+
+done
+
+exit 0
 
 # ------------------------------------------------------------------------------------------
 # References
