@@ -4,22 +4,23 @@
 # Date Modified: 4 February 2022
 # ------------------------------------------------------------------------------------------
       
-#If there aren't two arguments to the script 
+# Assign list of fruit into the array
       
 fruit=(Apple Mango Strawberry Orange Banana)
       
-#For loop prints each element of the matrix fruit.
+# For loop prints each element of the fruit array.
       
 for ((i = 0; i <= 4; i++)) 
       
 do 
       
-    #Print fruit at matrix location i
+    #Print fruit at array location i
       
     echo "FRUIT: ${fruit[i]}"
 
 done 
      
+exit 0
 
 # ------------------------------------------------------------------------------------------
 # References

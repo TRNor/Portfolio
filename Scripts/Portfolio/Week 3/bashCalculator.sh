@@ -96,6 +96,8 @@ fi
 
 done
 
+exit 0
+
 # ------------------------------------------------------------------------------------------
 # References
 # MCKNIGHT, R. 17 January 2022. 3.2 Use arithmetic expressions to do calculations in scripts. Blackboard.Ecu.Edu.Au. https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274255_1
