@@ -16,7 +16,7 @@ reset="\e[0m"
 # Purpose: count number of lines in .txt file to itterate through (Ref 5).
 lineCount=$(wc -l < filenames.txt)
 
-echo "$lineCount"
+#echo "$lineCount"
 
 # Purpose: Write each line of the filenames.txt file to an array using the mapfile function (Ref 4 and.
 
@@ -26,7 +26,19 @@ mapfile -t lineArray < <(cut -d' ' -f1 < filenames.txt)
 
 for ((i = 0; i <= $lineCount; i++))
 do
-echo ${lineArray[$i]}
+#echo "${lineArray[$i]}"
+
+
+
+if [[ "${lineArray[$i]}" == *".sh" ]]; then
+    echo "${lineArray[$i]} - That file exists"
+#elif [ "${lineArray[$i]}"  ]; then
+    #do
+#else [  ]; then
+    #do
+fi
+
+
 done
 
 
@@ -41,4 +53,3 @@ exit 0
 # 3. YASIN, A. November 2021. count the number of lines in a file in bash. linuxhint. https://linuxhint.com/count-the-number-of-lines-in-a-file-in-bash/
 # 4. CYRUS. 12 October 2019. read lines from a text file and store it in array. stackoverflow. https://stackoverflow.com/questions/58352217/read-lines-from-text-file-and-store-it-in-array
 # 5. MORTON, B. 2 November 2021. Bash Split String. linuxscrew. https://www.linuxscrew.com/bash-split-string
-
