@@ -22,12 +22,24 @@ clear
 
 # Purpose: Check Password
 
+#if /home/student/ThomasNorman/Scripts/Portfolio/Week 2/passwordCheck.sh; then
+
 ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/passwordCheck.sh" )
+
 
 # If password is correct then start program
 
+if [ $? = 0 ]; then
+
+sleep 0.8s
+
+clear
+
+while [ "$EXIT" -eq 0 ]
+do
+
 # Purpose: Print menu to screen
-function
+#clear
 echo -e "Mega Menu" | figlet
 echo ""
 echo -e "${blue_bd}Select an option: ${reset}"
@@ -41,10 +53,8 @@ echo -e " 7) Download a file${reset}"
 echo -e "${yellow} 8) QUIT${reset}"
 echo ""
 
-while [ "$EXIT" -eq 0 ]
-do
-# Purpose: Save user selection to variable
 
+# Purpose: Save user selection to variable
 read -p '' userSelection
 
 # Purpose: Select appropriate script based on users selection (case statement)
@@ -53,40 +63,36 @@ case $userSelection in
 1)
     # Create a folder
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldermaker.sh" )
-    clear
 ;;
 2)
     # Copy a folder
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldercopier.sh" )
-    clear
 ;;
 3)
     # Reset the password
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/resetPassword.sh" )
-    clear
 ;;
 4)
     # Calculator
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/bashCalculator.sh" )
-    clear
 ;;
 5)
     # Create week folders
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/megafoldermaker.sh" )
-    clear
 ;;
 6)
     # Check filenames
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/filenames.sh" )
-    clear
 ;;
 7)
     # Download a file
     ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/webDownloader.sh" )
-    clear
 ;;
 8)
     # Quit
+    clear
+    echo "Program successfully quit."
+    break
 ;;
 #Default Case
 *)
@@ -96,7 +102,16 @@ esac
 
 done
 
+else
+    :
+fi
+
+
 exit 0
+
+
+
+
 
 
 
