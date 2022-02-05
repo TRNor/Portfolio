@@ -1,7 +1,7 @@
 #!/bin/bash
 # webDownloader.sh - A basic script that allows a user to download a URL contents to a folder of choice that loops until the user exits.
 # Author: Thomas Norman
-# Date Modified: 4 February 2022
+# Date Modified: 5 February 2022
 # ------------------------------------------------------------------------------------------
 
 # Purpose: Define Global Variables
@@ -12,16 +12,12 @@ reset="\e[0m"
 
 EXIT=0
 
-# Purpose: Print Menu to screen and prompt user to select an option to either download a file, clear the screen to main menu or quit.
-
-
-
 # Purpose: While loop - run script until user decides to quit.
 
 while [ "$EXIT" -eq 0 ]
 do
 
-# Purpose: Heading
+# Purpose: Print Heading
 
 echo -e "${uline}${bold} Web Downloader ${reset}"
 echo ""
@@ -65,4 +61,6 @@ exit 0
 # 1. MCKNIGHT, R. 17 January 2022. 3.5 An internet downloader using loops. Blackboard.Ecu.Edu.Au. https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274258_1
 # 2. DOMANTAS G. 2 February 2022. Tutorials wget command examples. www.hostinger.com. https://www.hostinger.com/tutorials/wget-command-examples/
 
-
+# ------------------------------------------------------------------------------------------
+# Notes
+# Script could be improved as it's not robust against invalid input such as an invalid URL.
