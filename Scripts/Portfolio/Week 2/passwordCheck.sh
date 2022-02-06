@@ -11,6 +11,11 @@
 
 # Purpose: Assign stored password hash to variable 'passHashStored'
 
+# Call passwordMenu.sh to run main menu.
+
+( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/passwordMenu.sh" )
+
+
 passHashStored=$(cat secret.txt)
 
 # Purpose: Prompt the user to enter a password (hidden) and assign this entry to the variable 'passwordEntered'
