@@ -15,7 +15,7 @@ do
 
     if [ -f $i ]; then
         echo "$i - That file exists"
-    elif [ -d $i ]; then
+    elif [[ -d $i ]]; then
         echo "$i - That's a directory"
     elif [ -z $i ]; then
         :
