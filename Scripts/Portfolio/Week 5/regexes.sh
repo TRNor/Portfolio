@@ -60,36 +60,35 @@ menu () {
 all_sed ()
 {
     egrep -r "sed " /home/student/ThomasNorman/Scripts/Portfolio/
-    sleep 10s
+    read -p "Press [Enter] key to start backup..."
 }
 
 # all lines that start with the letter m
 all_m ()
 {
     egrep -r "^m" /home/student/ThomasNorman/Scripts/Portfolio/
-    sleep 10s
+    read -p "Press [Enter] key to start backup..."
 }
 
 # all lines that contain three digit numbers
 all_3digit ()
 {
     egrep -r "(^|[^0-9])[0-9]{3}($|[^0-9])" /home/student/ThomasNorman/Scripts/Portfolio/
-    sleep 10s
+    read -p "Press [Enter] key to start backup..."
 }
 
 # all echo statements with at least three words
 all_echo3w ()
 {
-    egrep -r "(echo -.*)([a-bA-b0-1])" /home/student/ThomasNorman/Scripts/Portfolio/
-    echo -e "${red}4) WIP${reset}" && sleep 15s
+    egrep -r '(echo.*"(\S+\s+?){3,}")' /home/student/ThomasNorman/Scripts/
+    read -p "Press [Enter] key to start backup..."
 }
 
 # all lines that would make a good password (use your knowledge of cybersecurity to decide what makes a good password).
 all_goodPW ()
 {
-    grep -Er "^[a-zA-Z0-9!@#$%^&*]{16,}$".*"\d" /home/student/ThomasNorman/Scripts/Portfolio/Week\ 5/greptest.txt
-    #.*^[a-z]$.*^[A-Z]$.*^[0-9]$.*^[!@#$%^&*]$
-    echo -e "${red}5) WIP${reset}" && sleep 15s
+    grep -Pr '^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!"#\$%&])[a-zA-Z0-9!"#\$%&]{1,}$' /home/student/ThomasNorman/Scripts/
+    read -p "Press [Enter] key to start backup..."
 }
 
 #------------------------------------------------------------------------------------------------------------------------
