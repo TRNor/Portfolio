@@ -41,7 +41,7 @@ echo "Guessing Game"
 
 getNumber "Please type a number between 1 and 100" 1 100 
       
-echo "Well Done!" 
+echo "Right!" 
 
 exit 0
 
