@@ -21,8 +21,7 @@ EXIT=0
 clear
 
 # Purpose: Check Password
-
-( "../Portfolio/Week 2/PasswordCheck/PasswordCheck.sh" )
+( "$(dirname $(dirname $(dirname $(dirname $(realpath $0)))))/Week2/PasswordCheck/bin/PasswordCheck.sh" )
 
 # If password is correct then start program after 0.5 seconds.
 
@@ -58,20 +57,20 @@ read -p '' userSelection
 case $userSelection in
 1)
     # Create a folder
-    ( "./Portfolio/Week 2/foldermaker.sh" )
+    ( "$(dirname $(dirname $(dirname $(dirname $(realpath $0)))))/Week2/foldermaker.sh" )
     sleep 1s
     clear
 ;;
 2)
     # Copy a folder
-    ( "./Portfolio/Week 2/foldercopier.sh" )
+    ( "$(dirname $(dirname $(dirname $(dirname $(realpath $0)))))/Week2/foldercopier.sh" )
     sleep 1s
     clear
 ;;
 3)
     # Reset the password
-    ( "./Portfolio/Week 2/resetPassword.sh" )
-    sleep 1s
+    ( "$(dirname $(dirname $(dirname $(dirname $(realpath $0)))))/Week2/PasswordCheck/bin/PasswordReset.sh" )
+    sleep 2s
     clear
 ;;
 4)
