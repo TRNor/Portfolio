@@ -58,7 +58,7 @@ menu_Account () {
 #------
 login () {
     # Define variables
-    userDir="$(dirname $(dirname $(realpath $0)) )/Users"
+    userDir="$(dirname $(dirname $(realpath $0)))/Users"
     EXIT1=0
     EXIT2=0
 
