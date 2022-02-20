@@ -22,7 +22,7 @@ clear
 
 # Purpose: Check Password
 
-( "./Portfolio/Week 2/passwordCheck.sh" )
+( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/PasswordCheck/PasswordCheck.sh" )
 
 # If password is correct then start program after 0.5 seconds.
 
