@@ -1,21 +1,20 @@
-# formatting.awk - This awk script can be applied to data input to format the input into a neat table.
+# formatting.awk - This awk script can be called to format the input data into a neat table.
 # Author: Thomas Norman
-# Date Modified: 17-02-2022
-# ------------------------------------------------------------------------------------------
+# Date Modified: 20-02-2022
+# ---------------------------------------------------------------------------------------------------------------------------
+
 BEGIN{
     #------------------------------------------------------------------------------------------------------------------------
-    # Set field separator to ":".
+    # Define Field Seperator, Print column headings and corresponding table boarders
     #------------------------------------------------------------------------------------------------------------------------
     FS=":";
-    #------------------------------------------------------------------------------------------------------------------------
-    # Print top of table with headings and spacing.
-    #------------------------------------------------------------------------------------------------------------------------
+
     print "_______________________________________________________________________________________________";
     print "| \033[34mUsername        \033[0m | \033[34mUser ID\033[0m | \033[34mGroup ID\033[0m | \033[34mHome                           \033[0m | \033[34mShell            \033[0m |";
     print "|__________________|_________|__________|_________________________________|___________________|";
 }
     #------------------------------------------------------------------------------------------------------------------------
-    # Filter to print only lines that contain "bash".
+    # Filter to print only lines that contain "bash"
     # Format table with colours and spacing for selected fields.
     #------------------------------------------------------------------------------------------------------------------------
 /bash/{
@@ -29,6 +28,6 @@ END {
     print "|__________________|_________|__________|_________________________________|___________________|";
 }
 
-# ------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------
 # References
-# 1. MCKNIGHT, R. 17 January 2022. 5.5 Understand and execute scripts that use AWK. Blackboard.Ecu.Edu.Au. https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274273_1
+# 1. 5.5 Understand and execute scripts that use AWK. (2022). https://blackboard.ecu.edu.au/webapps/blackboard/execute/displayLearningUnit?course_id=_662967_1&content_id=_8274273_1
