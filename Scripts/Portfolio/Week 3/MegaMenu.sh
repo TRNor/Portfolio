@@ -22,7 +22,7 @@ clear
 
 # Purpose: Check Password
 
-( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/passwordCheck.sh" )
+( "./Portfolio/Week 2/passwordCheck.sh" )
 
 # If password is correct then start program after 0.5 seconds.
 
@@ -58,43 +58,43 @@ read -p '' userSelection
 case $userSelection in
 1)
     # Create a folder
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldermaker.sh" )
+    ( "./Portfolio/Week 2/foldermaker.sh" )
     sleep 1s
     clear
 ;;
 2)
     # Copy a folder
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/foldercopier.sh" )
+    ( "./Portfolio/Week 2/foldercopier.sh" )
     sleep 1s
     clear
 ;;
 3)
     # Reset the password
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 2/resetPassword.sh" )
+    ( "./Portfolio/Week 2/resetPassword.sh" )
     sleep 1s
     clear
 ;;
 4)
     # Calculator
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/bashCalculator.sh" )
+    ( "./Portfolio/Week 3/bashCalculator.sh" )
     sleep 1s
     clear
 ;;
 5)
     # Create week folders
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/megafoldermaker.sh" )
+    ( "./Portfolio/Week 3/megafoldermaker.sh" )
     sleep 1s
     clear
 ;;
 6)
     # Check filenames
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/filenames.sh" )
+    ( "./Portfolio/Week 3/filenames.sh" )
     sleep 3s
     clear
 ;;
 7)
     # Download a file
-    ( "/home/student/ThomasNorman/Scripts/Portfolio/Week 3/webDownloader.sh" )
+    ( "./Portfolio/Week 3/webDownloader.sh" )
     sleep 1s
     clear
 ;;
