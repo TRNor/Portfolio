@@ -29,7 +29,7 @@ def guess_password(real, disp):
             hashguess = hashlib.sha256(guess.encode("utf-8")).hexdigest() 
             # If hashed guess equals hashed secret PW, print pw & number of attempts.
             if hashguess == real:
-                return 'password is {}. found in {} guesses.'.format(guess, attempts)
+                return 'Your Secret Password is {}. It was cracked in {} guesses.'.format(guess, attempts)
             # uncomment line 18 to display attempts, though will be slower
             if disp == "Y":
                 print(Fore.YELLOW + guess, attempts)
