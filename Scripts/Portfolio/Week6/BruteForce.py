@@ -38,15 +38,32 @@ def guess_password(real, disp):
 # MAIN CODE
 #------------------------------------------------------------------------------------------------------------------------
 
-print(Fore.CYAN + "Please enter a password consisting of only upper or lowercase letters [A-Za-z] and or numbers from [0-9].")
-print(Fore.CYAN + "Your password must be no longer than 10 characters long.")
-print(Fore.CYAN + "NOTE: Combinations longer than 4 characters could take a fairly long time to crack.\n")
+done = False
+while not done:
+    print(Fore.WHITE + "--------------------------------------")
+    print("|" + Fore.MAGENTA + "   BRUTEFORCE.PY PASSWORD CRACKER   " + Fore.WHITE + "|")
+    print(Fore.WHITE + "--------------------------------------")
+    print(Fore.WHITE + "C - Crack")
+    print("Q - Quit")
+    print(Fore.WHITE + "--------------------------------------")
+    choice = input(":: ")
+    if choice == "C":
+        print(Fore.CYAN + "Please enter a password consisting of only upper or lowercase letters [A-Za-z] and or numbers from [0-9].")
+        print(Fore.CYAN + "Your password must be no longer than 10 characters long.")
+        print(Fore.CYAN + "NOTE: Combinations longer than 4 characters could take a fairly long time to crack.\n")
 
-display = input(Fore.LIGHTGREEN_EX + "To print guesses in real time type 'Y' and press [ENTER], otherwise press [ENTER].")
-secretPW = input(Fore.GREEN + "\nYour Secret Password: ")
-secretPWHash = hashlib.sha256(secretPW.encode("utf-8")).hexdigest() 
+        display = input(Fore.LIGHTGREEN_EX + "To print guesses in real time type 'Y' and press [ENTER], otherwise press [ENTER].")
+        secretPW = input(Fore.GREEN + "\nYour Secret Password: ")
+        secretPWHash = hashlib.sha256(secretPW.encode("utf-8")).hexdigest() 
 
-print("\n" + Fore.RED + guess_password(secretPWHash, display))
+        print("\n" + Fore.RED + guess_password(secretPWHash, display))
+    elif choice == "Q":
+        print("Program Quit Successfully!")
+        done = True
+    else:
+        print(Fore.RED + "ERROR: Invalid User Input")
+
+
 
 # -----------------------------------------------------------------------------------------------------------------------
 # References
